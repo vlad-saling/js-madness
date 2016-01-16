@@ -23,24 +23,36 @@
 //        };
 //    })();
 
-    var foo = (function() {
-        var isActive = false;
-        return {
-            init: function () {
-                if (foo.isActive) {
-                    alert('boo is active');
-                }
-            },
-            booInactive: function () {
-                if (!foo.isActive) {
-                    alert('boo is inactive');
-                }
-            }
-        }
-    })();
+//    var foo = (function() {
+//        var isActive = false;
+//        return {
+//            init: function () {
+//                if (foo.isActive) {
+//                    alert('boo is active');
+//                }
+//            },
+//            booInactive: function () {
+//                if (!foo.isActive) {
+//                    alert('boo is inactive');
+//                }
+//            }
+//        }
+//    })();
+//
+//    foo.isActive = true;
+//    foo.init();
 
-    foo.isActive = true;
-    foo.init();
+
+// // confusing variable passing
+//    var y = "booish"
+//
+//    var foo = (function (x){
+//
+//        console.log(x);
+//
+//    })(y);
+
+
 
 
 
