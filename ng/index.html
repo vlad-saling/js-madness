@@ -1,0 +1,31 @@
+
+<!doctype html>
+<html ng-app>
+<head>
+    <title>boo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
+    <script>
+
+    </script>
+</head>
+    <body>
+
+
+        <input type="text" ng-model="searchNames">
+
+        {{ searchNames }}
+
+        <div class="container" ng-init="names=['dave','tom','steve']">
+
+            <h2>results</h2>
+
+            <ul>
+                <li ng-repeat="name in names | filter:searchNames">{{ name }}</li>
+
+            </ul>
+
+        </div>
+
+    </body>
+
+</html>
