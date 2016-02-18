@@ -1,6 +1,18 @@
+/*global $ */
+
+var coreConf = {};
 
 
 (function () {
+    
+   coreConf.set = function (setting) {
+        $.extend(coreConf, setting);
+        console.log(coreConf.setting.foo);
+   };
+   
+
+
+})();
 
 
 
@@ -56,8 +68,4 @@
 
 
 
-
-
-
-})();
 
