@@ -8,11 +8,18 @@ var coreConf = {};
    coreConf.set = function (setting) {
         $.extend(coreConf, setting);
         console.log(coreConf.setting.foo);
+     //    var el = document.getElementById('foo');
+      //   el.innerText = coreConf.setting.foo;
+
+       
    };
    
 
 
 })();
+
+
+
 
 
 
