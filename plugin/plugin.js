@@ -1,19 +1,20 @@
 var pluginName = {
-    'name': 'pluginName',
     init: function() {
-        this.render(); 
+        ((this.rendered) ? null : this.render() )
     },
     render: function() {
-        console.log(coreObject.core + ' call from plugin')
-    }    
+        console.log('call from pluginName')
+        this.rendered = true;
+    },
+    rendered : false,     
 }
 
 
 if ( typeof coreObject !== 'undefined' ) {
     coreObject.set(pluginName);
 }
-else if ( typeof pluginRegistry == 'undefined' ) {
-    var coreObject = { 'plugins': ['pluginName']}
+else {
+    var coreObject = { 'plugins': [pluginName]}
 }
 
 
