@@ -7,26 +7,15 @@
 
 //simulating network hang
 
-    //in case plugins loaded before core, they'll create coreObject which will be either extended with set
-    if ( typeof coreObject !== 'undefined' ) {
-        coreObject.set = function(val) {
+    
+
+    var coreObject = {
+        'plugins': [],
+        set: function(val) {
             this.plugins.push(val);
             core.pluginCalls();
         }  
-    }
-
-    //if core is the first, we'll make a niew coreObject
-    else {
-        var coreObject = {
-            'plugins': [],
-            set: function(val) {
-                this.plugins.push(val);
-                core.pluginCalls();
-            }  
-        };
-    }
-
-    
+    };
 
     var core = {
         init: function() {
@@ -45,7 +34,13 @@
 
     core.init(); 
 
-    
+    //in case plugins loaded before core, this merge in the temporary pluginRegistry into coreObject
+    if ( typeof pluginRegistry !== 'undefined' ) {
+        pluginRegistry.plugins.forEach(function(element) {
+            coreObject.set(pluginName);
+        }, this);
+    }
+
 
 
 

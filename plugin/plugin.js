@@ -12,11 +12,8 @@ var pluginName = {
 if ( typeof coreObject !== 'undefined' ) {
     coreObject.set(pluginName);
 }
-else if ( typeof pluginRegistry !== 'undefined' ) {
-    pluginRegistry.plugins.push('pluginName')
-}
 else if ( typeof pluginRegistry == 'undefined' ) {
-    var pluginRegistry = { 'plugins': ['pluginName']}
+    var coreObject = { 'plugins': ['pluginName']}
 }
 
 
