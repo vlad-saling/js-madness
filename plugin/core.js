@@ -5,39 +5,50 @@
 // 4) think about proper order of plugins execution
 // 5) register plugin into coreObject synchronously
 
+//simulating network hang
+setTimeout(function(){ 
 
-var coreObject = {
-    'core':'core ready',
-    'plugins': [],
-    set: function(val) {
-       this.plugins.push(val);
-       core.pluginCalls();
-    },
-    get: function() {
-        coreObject.plugins.forEach(function(element) {
-            console.log(element)
-        }, this);
-    }    
-};
+    var coreObject = {
+        'core':'core ready',
+        'plugins': [],
+        set: function(val) {
+        this.plugins.push(val);
+        core.pluginCalls();
+        },
+        get: function() {
+            coreObject.plugins.forEach(function(element) {
+                console.log(element)
+            }, this);
+        }    
+    };
 
-var core = {
-    init: function() {
-        //core triggered here
-        this.render();        
-    },
-    render: function() {
-        console.log(coreObject.core);
-        //plugins called after core 
-        this.pluginCalls();
+    (function askToSignUp() {
+        
+    }());
+
+    var core = {
+        init: function() {
+            //core triggered here
+            this.render();        
+        },
+        render: function() {
+            console.log(coreObject.core);
+            //plugins called after core 
+            this.pluginCalls();
 
 
-    },
-    pluginCalls: function() {
-        console.log('Registered plugins: ' + coreObject.plugins.length);
+        },
+        pluginCalls: function() {
+            console.log('Registered plugins: ' + coreObject.plugins.length);
+        }
     }
-}
 
-core.init();
+    
+    
+
+    core.init(); 
+
+ }, 3000);
 
 
 

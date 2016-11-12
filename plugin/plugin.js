@@ -4,8 +4,9 @@ var pluginName = {
     },
     render: function() {
         console.log(coreObject.core + ' call from plugin')
-    }
+    }    
 }
+
 
 coreObject.set(pluginName);
 
