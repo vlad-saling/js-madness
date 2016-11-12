@@ -6,25 +6,23 @@
 // 5) register plugin into coreObject synchronously
 
 //simulating network hang
-setTimeout(function(){ 
+
+    
 
     var coreObject = {
         'core':'core ready',
         'plugins': [],
         set: function(val) {
-        this.plugins.push(val);
-        core.pluginCalls();
+            this.plugins.push(val);
+            core.pluginCalls();
         },
         get: function() {
-            coreObject.plugins.forEach(function(element) {
+            this.plugins.forEach(function(element) {
                 console.log(element)
             }, this);
         }    
     };
 
-    (function askToSignUp() {
-        
-    }());
 
     var core = {
         init: function() {
@@ -43,12 +41,16 @@ setTimeout(function(){
         }
     }
 
-    
-    
-
     core.init(); 
 
- }, 3000);
+    //in case plugins loaded before core, this merge in the temporary pluginRegistry into coreObject
+    if ( typeof pluginRegistry !== 'undefined' ) {
+        pluginRegistry.plugins.forEach(function(element) {
+            coreObject.set(pluginName);
+        }, this);
+    }
+
+
 
 
 

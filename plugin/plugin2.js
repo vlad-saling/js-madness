@@ -1,5 +1,5 @@
-var pluginName = {
-    'name': 'pluginName',
+var pluginName2 = {
+    'name': 'pluginName2',
     init: function() {
         this.render(); 
     },
@@ -10,14 +10,12 @@ var pluginName = {
 
 
 if ( typeof coreObject !== 'undefined' ) {
-    coreObject.set(pluginName);
+    coreObject.set(pluginName2);
 }
 else if ( typeof pluginRegistry !== 'undefined' ) {
-    pluginRegistry.plugins.push('pluginName')
+    pluginRegistry.plugins.push('pluginName2')
 }
 else if ( typeof pluginRegistry == 'undefined' ) {
-    var pluginRegistry = { 'plugins': ['pluginName']}
+    var pluginRegistry = { 'plugins': ['pluginName2']}
 }
-
-
 
