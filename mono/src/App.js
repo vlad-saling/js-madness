@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Header from './components/header.js'
-import Footer from './components/footer.js'
+import Masthead from './components/Masthead.js'
+import Header from './components/Header.js'
+import Footer from './components/Footer.js'
 import './App.css';
 
 class App extends Component {
@@ -32,15 +33,33 @@ class App extends Component {
   
   render() {
     return (
-        <div id='ibm-top' className="App ibm-landing-page">
-          <Header />
+    <div id='ibm-top' className="App ibm-landing-page">
+        <Masthead />
           <div id="ibm-content-wrapper">
-            <p>
-              Content will be here
-            </p>
-            <Footer />
-          </div>
-	      </div>
+            <Header />
+            <main role="main" aria-labelledby="ibm-pagetitle-h1">
+                <div id="ibm-pcon">
+                    <div id="ibm-content">
+                        <div id="ibm-content-body">
+                            <div id="ibm-content-main">
+                                <div className="ibm-columns">
+                                    <div className="ibm-col-6-4">
+                                        <p className="ibm-h3">
+                                            Improve pricing accuracy, responsiveness to competitors and compliance with pricing policies
+                                        </p>
+                                        <p>
+                                            IBM's cloud-based Agile Pricing solution enables retailers, with under $1billion USD in annual revenue, to more efficiently manage and execute prices for every product in every location, helping to drive revenue, margin and customer loyalty improvements. Using a centralised system and flexible rules-based approach retailers can save time, reduce errors, improve their responsiveness to competitor pricing, and ensure compliance with strategic pricing policies and goals.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <Footer />
+    </div>
     );
     
   }
