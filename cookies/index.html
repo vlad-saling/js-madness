@@ -1,0 +1,20 @@
+<head>
+    <script>
+        (function(){
+
+            var dc = document.cookie;
+
+            //console.log(document.cookie)
+
+            if (document.cookie.indexOf('site_visited') > -1) {
+                console.log('you were already here')
+            }
+
+            else {
+                console.log('first time here')
+                document.cookie = "site_visited";;
+            }
+            
+        })();
+    </script>
+</head>
